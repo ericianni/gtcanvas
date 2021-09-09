@@ -74,10 +74,7 @@ def CanvasAPIGet(url, extra_params={}):
                 return result
             responseList.extend(result)
 
-            linkCurrent = response.links["current"]
-            linkLast = response.links["last"]
-
-            if (linkCurrent["url"] == linkLast["url"]):
+            if ("last" in response.links.keys()):
                 return responseList
             pageNum += 1
 
